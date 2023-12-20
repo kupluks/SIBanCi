@@ -6,8 +6,8 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="description" content="Indeks Bencana Kabupaten Ciamis" />
-		<meta name="keywords" content=" Bahaya, Kerentanan, Risiko, Ciamis" />
+		<meta name="description" content="Sistem Informasi Bencana Ciamis" />
+		<meta name="keywords" content=" Kejadian Bencana Kabupaten Ciamis" />
 		<link rel="icon" href="images/xyz.png" type="image/x-icon"/>
 		<link rel="shortcut icon" href="images/xyz.png" type="image/x-icon"/>
         <link rel="stylesheet" href="css/leaflet.css">
@@ -55,7 +55,8 @@
 		<script src="js/leaflet.rainviewer.js"></script>
 		<script src="js/L.Control.MousePosition.js"></script>
 		<script src="js/L.Control.Opacity.js"></script>
-		<script src="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.js"></script>        <script src="data/SLSBPS2019_3.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.js"></script>
+		<script src="data/SLSBPS2019_3.js"></script>
         <script src="data/BatasDesaBPS2019_4.js"></script>
         <script src="data/BatasKecamatanBPS2019_5.js"></script>
         <script src="data/BatasKabupatenBPS2019_6.js"></script>
@@ -251,7 +252,7 @@
             }
         }
         map.createPane('pane_SLSBPS2019_3');
-        map.getPane('pane_SLSBPS2019_3').style.zIndex = 403;
+        map.getPane('pane_SLSBPS2019_3').style.zIndex = 10;
         map.getPane('pane_SLSBPS2019_3').style['mix-blend-mode'] = 'normal';
         var layer_SLSBPS2019_3 = new L.geoJson(json_SLSBPS2019_3, {
             attribution: '',
@@ -286,7 +287,7 @@
             }
         }
         map.createPane('pane_BatasDesaBPS2019_4');
-        map.getPane('pane_BatasDesaBPS2019_4').style.zIndex = 404;
+        map.getPane('pane_BatasDesaBPS2019_4').style.zIndex = 9;
         map.getPane('pane_BatasDesaBPS2019_4').style['mix-blend-mode'] = 'normal';
         var layer_BatasDesaBPS2019_4 = new L.geoJson(json_BatasDesaBPS2019_4, {
             attribution: '',
@@ -321,7 +322,7 @@
             }
         }
         map.createPane('pane_BatasKecamatanBPS2019_5');
-        map.getPane('pane_BatasKecamatanBPS2019_5').style.zIndex = 405;
+        map.getPane('pane_BatasKecamatanBPS2019_5').style.zIndex = 8;
         map.getPane('pane_BatasKecamatanBPS2019_5').style['mix-blend-mode'] = 'normal';
         var layer_BatasKecamatanBPS2019_5 = new L.geoJson(json_BatasKecamatanBPS2019_5, {
             attribution: '',
@@ -356,7 +357,7 @@
             }
         }
         map.createPane('pane_BatasKabupatenBPS2019_6');
-        map.getPane('pane_BatasKabupatenBPS2019_6').style.zIndex = 406;
+        map.getPane('pane_BatasKabupatenBPS2019_6').style.zIndex = 7;
         map.getPane('pane_BatasKabupatenBPS2019_6').style['mix-blend-mode'] = 'normal';
         var layer_BatasKabupatenBPS2019_6 = new L.geoJson(json_BatasKabupatenBPS2019_6, {
             attribution: '',
