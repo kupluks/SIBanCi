@@ -8,6 +8,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="description" content="Sistem Informasi Bencana Ciamis" />
 		<meta name="keywords" content=" Kejadian Bencana Kabupaten Ciamis" />
+		<title>SIBanCi-Sistem Informasi Bencana Ciamis</title>
 		<link rel="icon" href="images/xyz.png" type="image/x-icon"/>
 		<link rel="shortcut icon" href="images/xyz.png" type="image/x-icon"/>
         <link rel="stylesheet" href="css/leaflet.css">
@@ -37,7 +38,7 @@
     <body>
         <div id="map">
         </div>
-        <script src="js/qgis2web_expressions.js"></script>
+         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
 		<script src="js/L.Control.Locate.min.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
@@ -64,8 +65,9 @@
         <script src="data/Puskesmas_8.js"></script>
         <script src="data/Mesjid_9.js"></script>
         <script src="data/RekapBencana2022_10.js"></script>
+		<script src="data/RekapBencana2023_11.js"></script>
         <script>
-        var map = L.map('map', {
+         var map = L.map('map', {
             zoomControl:true, maxZoom:23, minZoom:3
         })
         var hash = new L.Hash(map);
@@ -698,31 +700,40 @@
         function pop_RekapBencana2022_10(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['NO'] !== null ? autolinker.link(feature.properties['NO'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">NO</th>\
+                        <td>' + (feature.properties['NO'] !== null ? autolinker.link(feature.properties['NO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['TANGGAL KE'] !== null ? autolinker.link(feature.properties['TANGGAL KE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">TANGGAL KEJADIAN</th>\
+                        <td>' + (feature.properties['TANGGAL KE'] !== null ? autolinker.link(feature.properties['TANGGAL KE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['WAKTU KEJA'] !== null ? autolinker.link(feature.properties['WAKTU KEJA'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">WAKTU KEJADIAN</th>\
+                        <td>' + (feature.properties['WAKTU KEJA'] !== null ? autolinker.link(feature.properties['WAKTU KEJA'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['NAMA KEJAD'] !== null ? autolinker.link(feature.properties['NAMA KEJAD'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">JENIS BENCANA</th>\
+                        <td>' + (feature.properties['NAMA KEJAD'] !== null ? autolinker.link(feature.properties['NAMA KEJAD'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['LATITUDE'] !== null ? autolinker.link(feature.properties['LATITUDE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">LATITUDE</th>\
+                        <td>' + (feature.properties['LATITUDE'] !== null ? autolinker.link(feature.properties['LATITUDE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['LONGITUDE'] !== null ? autolinker.link(feature.properties['LONGITUDE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">LONGITUDE</th>\
+                        <td>' + (feature.properties['LONGITUDE'] !== null ? autolinker.link(feature.properties['LONGITUDE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['DUSUN'] !== null ? autolinker.link(feature.properties['DUSUN'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">DUSUN/LINGKUNGAN</th>\
+                        <td>' + (feature.properties['DUSUN/LING'] !== null ? autolinker.link(feature.properties['DUSUN/LING'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['DESA'] !== null ? autolinker.link(feature.properties['DESA'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">DESA/KELURAHAN</th>\
+                        <td>' + (feature.properties['DESA/KELUR'] !== null ? autolinker.link(feature.properties['DESA/KELUR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['KECAMATAN'] !== null ? autolinker.link(feature.properties['KECAMATAN'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">KECAMATAN</th>\
+                        <td>' + (feature.properties['KECAMATAN'] !== null ? autolinker.link(feature.properties['KECAMATAN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -804,6 +815,236 @@
 
         bounds_group.addLayer(layer_RekapBencana2022_10);
         cluster_RekapBencana2022_10.addTo(map);
+        function pop_RekapBencana2023_11(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">NO</th>\
+                        <td>' + (feature.properties['NO'] !== null ? autolinker.link(feature.properties['NO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TANGGAL KEJADIAN</th>\
+                        <td>' + (feature.properties['TANGGAL KE'] !== null ? autolinker.link(feature.properties['TANGGAL KE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">WAKTU KEJADIAN</th>\
+                        <td>' + (feature.properties['WAKTU KEJA'] !== null ? autolinker.link(feature.properties['WAKTU KEJA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KECAMATAN</th>\
+                        <td>' + (feature.properties['KECAMATAN'] !== null ? autolinker.link(feature.properties['KECAMATAN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">DESA/KELURAHAN</th>\
+                        <td>' + (feature.properties['DESA/KELUR'] !== null ? autolinker.link(feature.properties['DESA/KELUR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">DUSUN/LINGKUNGAN</th>\
+                        <td>' + (feature.properties['DUSUN/LING'] !== null ? autolinker.link(feature.properties['DUSUN/LING'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">RT</th>\
+                        <td>' + (feature.properties['RT'] !== null ? autolinker.link(feature.properties['RT'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">RW</th>\
+                        <td>' + (feature.properties['RW'] !== null ? autolinker.link(feature.properties['RW'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">JENIS BENCANA</th>\
+                        <td>' + (feature.properties['JENIS BENC'] !== null ? autolinker.link(feature.properties['JENIS BENC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">LATITUDE</th>\
+                        <td>' + (feature.properties['LATITUDE'] !== null ? autolinker.link(feature.properties['LATITUDE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">LONGITUDE</th>\
+                        <td>' + (feature.properties['LONGITUDE'] !== null ? autolinker.link(feature.properties['LONGITUDE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KK MENDERITA</th>\
+                        <td>' + (feature.properties['KK MENDERI'] !== null ? autolinker.link(feature.properties['KK MENDERI'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">JIWA MENDERITA</th>\
+                        <td>' + (feature.properties['JIWA MENDE'] !== null ? autolinker.link(feature.properties['JIWA MENDE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KORBAN HILANG</th>\
+                        <td>' + (feature.properties['KORBAN HIL'] !== null ? autolinker.link(feature.properties['KORBAN HIL'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KORBAN MENINGGAL</th>\
+                        <td>' + (feature.properties['KORBAN MEN'] !== null ? autolinker.link(feature.properties['KORBAN MEN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KORBAN LUKA-LUKA</th>\
+                        <td>' + (feature.properties['KORBAN LUK'] !== null ? autolinker.link(feature.properties['KORBAN LUK'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KK MENGUNGSI</th>\
+                        <td>' + (feature.properties['KK MENGUNG'] !== null ? autolinker.link(feature.properties['KK MENGUNG'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">JIWA MENGUNGSI</th>\
+                        <td>' + (feature.properties['JIWA MENGU'] !== null ? autolinker.link(feature.properties['JIWA MENGU'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">RUSAK RINGAN</th>\
+                        <td>' + (feature.properties['RUSAK RING'] !== null ? autolinker.link(feature.properties['RUSAK RING'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">RUSAK SEDANG</th>\
+                        <td>' + (feature.properties['RUSAK SEDA'] !== null ? autolinker.link(feature.properties['RUSAK SEDA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">RUSAK BERAT</th>\
+                        <td>' + (feature.properties['RUSAK BERA'] !== null ? autolinker.link(feature.properties['RUSAK BERA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TERANCAM</th>\
+                        <td>' + (feature.properties['TERANCAM'] !== null ? autolinker.link(feature.properties['TERANCAM'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TERENDAM</th>\
+                        <td>' + (feature.properties['TERENDAM'] !== null ? autolinker.link(feature.properties['TERENDAM'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TERTIMBUN</th>\
+                        <td>' + (feature.properties['TERTIMBUN'] !== null ? autolinker.link(feature.properties['TERTIMBUN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">SEKOLAH</th>\
+                        <td>' + (feature.properties['SEKOLAH'] !== null ? autolinker.link(feature.properties['SEKOLAH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TEMPAT IBADAH</th>\
+                        <td>' + (feature.properties['TEMPAT IBA'] !== null ? autolinker.link(feature.properties['TEMPAT IBA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">SAWAH</th>\
+                        <td>' + (feature.properties['SAWAH'] !== null ? autolinker.link(feature.properties['SAWAH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FASILITAS UMUM</th>\
+                        <td>' + (feature.properties['FASILITAS '] !== null ? autolinker.link(feature.properties['FASILITAS '].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">JALAN</th>\
+                        <td>' + (feature.properties['JALAN'] !== null ? autolinker.link(feature.properties['JALAN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">LAHAN HUTAN</th>\
+                        <td>' + (feature.properties['LAHAN HUTA'] !== null ? autolinker.link(feature.properties['LAHAN HUTA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KETERANGAN</th>\
+                        <td>' + (feature.properties['KETERANGAN'] !== null ? autolinker.link(feature.properties['KETERANGAN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_RekapBencana2023_11_0(feature) {
+            switch(String(feature.properties['JENIS BENC'])) {
+                case 'ANGIN KENCANG':
+                    return {
+                pane: 'pane_RekapBencana2023_11',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/Angin Kencang.svg',
+            iconSize: [15.2, 15.2]
+        }),
+                interactive: true,
+            }
+                    break;
+                case 'BANJIR':
+                    return {
+                pane: 'pane_RekapBencana2023_11',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/Banjir.svg',
+            iconSize: [15.2, 15.2]
+        }),
+                interactive: true,
+            }
+                    break;
+                case 'GEMPA BUMI':
+                    return {
+                pane: 'pane_RekapBencana2023_11',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/Gempa Bumi.svg',
+            iconSize: [15.2, 15.2]
+        }),
+                interactive: true,
+            }
+                    break;
+                case 'KARHUTLA':
+                    return {
+                pane: 'pane_RekapBencana2023_11',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/Karhutla.svg',
+            iconSize: [19.0, 19.0]
+        }),
+                interactive: true,
+            }
+                    break;
+                case 'KEKERINGAN':
+                    return {
+                pane: 'pane_RekapBencana2023_11',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/Kekeringan.svg',
+            iconSize: [19.0, 19.0]
+        }),
+                interactive: true,
+            }
+                    break;
+                case 'TANAH LONGSOR':
+                    return {
+                pane: 'pane_RekapBencana2023_11',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/Longsor.svg',
+            iconSize: [15.2, 15.2]
+        }),
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_RekapBencana2023_11');
+        map.getPane('pane_RekapBencana2023_11').style.zIndex = 411;
+        map.getPane('pane_RekapBencana2023_11').style['mix-blend-mode'] = 'normal';
+        var layer_RekapBencana2023_11 = new L.geoJson(json_RekapBencana2023_11, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_RekapBencana2023_11',
+            layerName: 'layer_RekapBencana2023_11',
+            pane: 'pane_RekapBencana2023_11',
+            onEachFeature: pop_RekapBencana2023_11,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_RekapBencana2023_11_0(feature));
+            },
+        });
+        var cluster_RekapBencana2023_11 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+            spiderfyDistanceMultiplier: 2});
+        cluster_RekapBencana2023_11.addLayer(layer_RekapBencana2023_11);
+
+        bounds_group.addLayer(layer_RekapBencana2023_11);
+        cluster_RekapBencana2023_11.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: false,
             position: 'topright',
@@ -815,8 +1056,8 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
 		var bts = {};
-		var BencanaMaps = {'Rekap Bencana 2022<br /><table><tr><td style="text-align: center;"><img src="legend/RekapBencana2022_10_AnginKencang0.png" /></td><td>Angin Kencang</td></tr><tr><td style="text-align: center;"><img src="legend/RekapBencana2022_10_Banjir1.png" /></td><td>Banjir</td></tr><tr><td style="text-align: center;"><img src="legend/RekapBencana2022_10_GempaBumi2.png" /></td><td>Gempa Bumi</td></tr><tr><td style="text-align: center;"><img src="legend/RekapBencana2022_10_Longsor3.png" /></td><td>Longsor</td></tr></table>': cluster_RekapBencana2022_10};
-       var FasumFasos = {'<img src="legend/Mesjid_9.png" /> Mesjid': cluster_Mesjid_9,'<img src="legend/Puskesmas_8.png" /> Puskesmas': cluster_Puskesmas_8,'Sekolah<br /><table><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SDNegeri0.png" /></td><td>SD Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SDSwasta1.png" /></td><td>SD Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MINegeri2.png" /></td><td>MI Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MISwasta3.png" /></td><td>MI Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMPNegeri4.png" /></td><td>SMP Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMPSwasta5.png" /></td><td>SMP Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MTsNegeri6.png" /></td><td>MTs Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MTsSwasta7.png" /></td><td>MTs Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMANegeri8.png" /></td><td>SMA Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMASwasta9.png" /></td><td>SMA Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MANegeri10.png" /></td><td>MA Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MASwasta11.png" /></td><td>MA Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMKNegeri12.png" /></td><td>SMK Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMKSwasta13.png" /></td><td>SMK Swasta</td></tr></table>': cluster_Sekolah_7};
+        var BencanaMaps = {'Rekap Bencana 2023<br /><table><tr><td style="text-align: center;"><img src="legend/RekapBencana2023_11_ANGINKENCANG0.png" /></td><td>ANGIN KENCANG</td></tr><tr><td style="text-align: center;"><img src="legend/RekapBencana2023_11_BANJIR1.png" /></td><td>BANJIR</td></tr><tr><td style="text-align: center;"><img src="legend/RekapBencana2023_11_GEMPABUMI2.png" /></td><td>GEMPA BUMI</td></tr><tr><td style="text-align: center;"><img src="legend/RekapBencana2023_11_KARHUTLA3.png" /></td><td>KARHUTLA</td></tr><tr><td style="text-align: center;"><img src="legend/RekapBencana2023_11_KEKERINGAN4.png" /></td><td>KEKERINGAN</td></tr><tr><td style="text-align: center;"><img src="legend/RekapBencana2023_11_TANAHLONGSOR5.png" /></td><td>TANAH LONGSOR</td></tr></table>': cluster_RekapBencana2023_11,'Rekap Bencana 2022<br /><table><tr><td style="text-align: center;"><img src="legend/RekapBencana2022_10_AnginKencang0.png" /></td><td>Angin Kencang</td></tr><tr><td style="text-align: center;"><img src="legend/RekapBencana2022_10_Banjir1.png" /></td><td>Banjir</td></tr><tr><td style="text-align: center;"><img src="legend/RekapBencana2022_10_GempaBumi2.png" /></td><td>Gempa Bumi</td></tr><tr><td style="text-align: center;"><img src="legend/RekapBencana2022_10_Longsor3.png" /></td><td>Longsor</td></tr></table>': cluster_RekapBencana2022_10,};
+        var FasumFasos = {'<img src="legend/Mesjid_9.png" /> Mesjid': cluster_Mesjid_9,'<img src="legend/Puskesmas_8.png" /> Puskesmas': cluster_Puskesmas_8,'Sekolah<br /><table><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SDNegeri0.png" /></td><td>SD Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SDSwasta1.png" /></td><td>SD Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MINegeri2.png" /></td><td>MI Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MISwasta3.png" /></td><td>MI Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMPNegeri4.png" /></td><td>SMP Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMPSwasta5.png" /></td><td>SMP Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MTsNegeri6.png" /></td><td>MTs Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MTsSwasta7.png" /></td><td>MTs Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMANegeri8.png" /></td><td>SMA Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMASwasta9.png" /></td><td>SMA Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MANegeri10.png" /></td><td>MA Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_MASwasta11.png" /></td><td>MA Swasta</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMKNegeri12.png" /></td><td>SMK Negeri</td></tr><tr><td style="text-align: center;"><img src="legend/Sekolah_7_SMKSwasta13.png" /></td><td>SMK Swasta</td></tr></table>': cluster_Sekolah_7};
 		var BatasAdm = {'<img src="legend/BatasKabupatenBPS2019_6.png" /> Batas Kabupaten BPS 2019': layer_BatasKabupatenBPS2019_6,'<img src="legend/BatasKecamatanBPS2019_5.png" /> Batas Kecamatan BPS 2019': layer_BatasKecamatanBPS2019_5,'<img src="legend/BatasDesaBPS2019_4.png" /> Batas Desa BPS 2019': layer_BatasDesaBPS2019_4,'<img src="legend/SLSBPS2019_3.png" /> SLS BPS 2019': layer_SLSBPS2019_3};
         var BaseMap = {
 			"OpenStreetMap": layer_OSMStandard_2,
@@ -838,6 +1079,7 @@
         map.on("layerremove", function(){
             resetLabels([layer_BatasDesaBPS2019_4,layer_Sekolah_7,layer_Puskesmas_8,layer_Mesjid_9]);
         });
+    
         </script>
     </body>
 </html>
